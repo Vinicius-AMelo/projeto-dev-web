@@ -9,7 +9,7 @@
   <body>
     <h1 class="title">História da Internet</h1>
     <ul class="buttons-list">
-      <li class="button-list-item">1960</li>
+      <li class="button-list-item e-active">1960</li>
       <li class="button-list-item">1970</li>
       <li class="button-list-item">1980</li>
       <li class="button-list-item">1990</li>
@@ -22,7 +22,7 @@
 
     <div class="history">
       <ul class="history-list">
-        <li class="history-item">
+        <li class="history-item e-active" class="history-item">
           <h2 class="history-title">Anos 1960 - Início da Internet</h2>
           <p class="history-paragraph">
             A internet teve suas origens na década de 1960 como uma rede de
@@ -33,9 +33,9 @@
             em pesquisa.
           </p>
         </li>
-        <li>
-          <h2>Anos 1970 - Protocolos de Comunicação</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">Anos 1970 - Protocolos de Comunicação</h2>
+          <p class="history-paragraph">
             Os anos 70 testemunharam o desenvolvimento dos protocolos TCP/IP
             (Transmission Control Protocol/Internet Protocol), que permitem a
             transferência de dados entre computadores em redes diferentes. A
@@ -43,18 +43,20 @@
             operacionalização da internet como a conhecemos hoje.
           </p>
         </li>
-        <li>
-          <h2>Anos 1980 - Expansão e Comercialização</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">Anos 1980 - Expansão e Comercialização</h2>
+          <p class="history-paragraph">
             Durante os anos 80, a internet começou a se expandir além do uso
             acadêmico e militar, entrando no domínio comercial. Em 1989, a NSF
             (National Science Foundation) permitiu o uso comercial da internet,
             resultando em seu rápido crescimento.
           </p>
         </li>
-        <li>
-          <h2>Anos 1990 - Nascimento da World Wide Web</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">
+            Anos 1990 - Nascimento da World Wide Web
+          </h2>
+          <p class="history-paragraph">
             Em 1991, o CERN (Conselho Europeu para a Pesquisa Nuclear)
             apresentou ao mundo a World Wide Web, uma rede de hipertexto
             acessível ao público e projetada para tornar a internet mais fácil
@@ -62,9 +64,9 @@
             1993, tornando a Web mais acessível para o usuário comum.
           </p>
         </li>
-        <li>
-          <h2>Fim dos anos 1990 - A era do ".com":</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">Fim dos anos 1990 - A era do ".com":</h2>
+          <p class="history-paragraph">
             No final dos anos 1990, a internet deu lugar à "bolha do ponto com",
             uma época de especulação de mercado em torno das empresas de
             internet. Embora muitas dessas empresas não tenham sobrevivido ao
@@ -73,18 +75,22 @@
             mundo.
           </p>
         </li>
-        <li>
-          <h2>Anos 2000 - Redes Sociais e Vídeos Online</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">
+            Anos 2000 - Redes Sociais e Vídeos Online
+          </h2>
+          <p class="history-paragraph">
             Os anos 2000 foram caracterizados pelo surgimento das redes sociais
             e do compartilhamento de vídeos online. Sites como Facebook, YouTube
             e Twitter foram lançados durante esse período, e o acesso à internet
             em dispositivos móveis começou a se tornar cada vez mais comum.
           </p>
         </li>
-        <li>
-          <h2>Anos 2010 - A era do Mobile e Cloud Computing</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">
+            Anos 2010 - A era do Mobile e Cloud Computing
+          </h2>
+          <p class="history-paragraph">
             Os anos 2010 foram marcados pelo crescimento do uso da internet
             móvel e do cloud computing. Os smartphones se tornaram o principal
             meio de acesso à internet para muitas pessoas. Ao mesmo tempo,
@@ -92,9 +98,11 @@
             armazenar dados e rodar aplicações.
           </p>
         </li>
-        <li>
-          <h2>Anos 2020 - Internet das Coisas e Inteligência Artificial</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">
+            Anos 2020 - Internet das Coisas e Inteligência Artificial
+          </h2>
+          <p class="history-paragraph">
             Na década de 2020, a internet das coisas (IoT) e a inteligência
             artificial se tornaram cada vez mais integradas à internet. Hoje,
             uma infinidade de dispositivos, de geladeiras a carros, estão
@@ -103,9 +111,9 @@
             de voz e tradução automática.
           </p>
         </li>
-        <li>
-          <h2>Anos 2023 – Desafios atuais</h2>
-          <p>
+        <li class="history-item">
+          <h2 class="history-title">Anos 2023 – Desafios atuais</h2>
+          <p class="history-paragraph">
             No entanto, o crescimento da internet também levanta questões
             importantes sobre privacidade, segurança, desinformação e acesso
             digital. Lidar com esses desafios é uma das principais tarefas
@@ -117,5 +125,22 @@
         </li>
       </ul>
     </div>
+    <script>
+      const buttons = document.querySelectorAll(".button-list-item");
+      const container = document.querySelectorAll(".history-item");
+
+      buttons.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          container.forEach((item) => {
+            item.classList.remove("e-active");
+          });
+          buttons.forEach((item) => {
+            item.classList.remove("e-active");
+          });
+          buttons[index].classList.add("e-active");
+          container[index].classList.add("e-active");
+        });
+      });
+    </script>
   </body>
 </html>
